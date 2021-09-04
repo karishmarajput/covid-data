@@ -1,12 +1,10 @@
 init();
 let executed = false;
 var data = '';
-
 let countryArr = new Array();
 let countryConfirmed = new Array();
 let countryDeath = new Array();
 function init(){
-    
     var url ='https://api.covid19api.com/summary';
     $.get(url,function(data){
         for(let i = 0; i < data.Countries.length; i++){
@@ -14,7 +12,6 @@ function init(){
             countryConfirmed.push(data.Countries[i].TotalConfirmed);
             countryDeath.push(data.Countries[i].TotalDeaths);
         }
-        console.log(countryArr);
         data = `
             <td>${data.Global.TotalConfirmed}</td>
             <td> ${data.Global.TotalDeaths}</td>
@@ -33,9 +30,10 @@ function refresh(){
     }
     
 }
-
 var select = document.getElementById("arr");
 function countrywise(){
+    document.getElementById("chartContainer").innerHTML = '&nbsp;';
+    document.getElementById("chartContainer").innerHTML = '<canvas id="myChart"></canvas>';
     document.getElementById('country-wise').style.display = "block";
     for (var i = 0; i < countryArr.length; i++) {
         var optn = countryArr[i];
