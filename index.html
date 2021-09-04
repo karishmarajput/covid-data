@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title>Covid-19 API</title>
 </head>
-<body>
-    
+<body>    
     <div class="container">
         <h1 class="text-center mt-5">COVID-19</h1>
-    
         <br>
         <br>
         <h3>Global Data:</h3>
@@ -26,10 +24,8 @@
             <tbody>
             <tr id="data">
             </tr>
-            
             </tbody>
         </table>
-        
         <button class="btn btn-warning" onclick="countrywise()">Country-Wise</button>
         <br>
         <div class="country-wise" id="country-wise">
@@ -53,17 +49,15 @@
             </table>
         </div>
         <div class="canvas" id="canvas">
-            
             <select class="form-select" aria-label="Default select example" onclick="countrywise()" id="form">
                 <option selected value="1">Total Confirmed Graph</option>
                 <option value="2">Total Death Graph</option>
             </select>
-            <canvas id="myChart"></canvas>
+            <div id="chartContainer">
+                <canvas id="myChart"></canvas>
+            </div> 
         </div>
-    
-     
         <button class="btn btn-danger" onclick="refresh()">Refresh</button>
-        
     </div>    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
